@@ -13,12 +13,14 @@ client.on("message", (message) => {
   if (message.author.bot) {
     // Debug
     message.channel.send("Ignoring message from bot");
+    return;
   }
 
   // Only process commands beginning with the set prefix
   if (message.content.indexOf(prefix) !== 0) {
     // Debug
     message.channel.send("Ignoring message that does not begin with prefix");
+    return;
   }
 
   // Split input into commands and arguments
@@ -31,6 +33,7 @@ client.on("message", (message) => {
 
   if (command === "ping") {
     message.channel.send("pong!");
+    return;
   }
 
   if (command === "roll") {
@@ -52,6 +55,7 @@ client.on("message", (message) => {
       results.push(Math.floor(Math.random() * y) + 1);
     }
     message.channel.send("Rolled the following numbers: " + results.join(", "));
+    return;
   }
 });
 
