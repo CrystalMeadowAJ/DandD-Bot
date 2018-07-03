@@ -11,8 +11,6 @@ client.on("message", (message) => {
 
   // Ignore other bots
   if (message.author.bot) {
-    // Debug
-    message.channel.send("Ignoring message from bot");
     return;
   }
 
