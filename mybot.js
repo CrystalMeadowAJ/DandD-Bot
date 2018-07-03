@@ -29,7 +29,7 @@ client.on("message", (message) => {
   message.channel.send("Args: " + args.join(", "));
   
 
-  if (comamnd === "ping") {
+  if (command === "ping") {
     message.channel.send("pong!");
   }
 
