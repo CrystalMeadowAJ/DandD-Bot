@@ -41,8 +41,11 @@ client.on("message", (message) => {
     }
     var argRegex = /(\d*)d(\d*)/i;
     var match = argRegex.exec(args[0]);
-    if (match == null || match.length !== 2) {
-      message.channel.send("Incorrect command format");
+    if (match == null) {
+      message.channel.send("No applicable argument found");
+    }
+    if (match.length !== 2) {
+      message.channel.send("Incorrect command format; values found: " + match.join(", "));
       return;
     }
     // Should probably put limits on these
