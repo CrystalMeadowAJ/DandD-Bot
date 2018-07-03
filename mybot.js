@@ -39,7 +39,7 @@ client.on("message", (message) => {
     var y = match[1];
     var results = [];
     for(var i = 0; i < x; i++) {
-      results.push(Math.floor(Math.random() * (y - min + 1)) + min);
+      results.push(Math.floor(Math.random() * y) + 1);
     }
     message.channel.send("Rolled the following numbers: " + results.join(", "));
   }
