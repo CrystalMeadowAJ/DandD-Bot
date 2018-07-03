@@ -8,21 +8,21 @@ client.on("ready", () => {
 });
 
 client.on("message", (message) => {
-  
+
   // Ignore other bots
   if (message.author.bot) return;
-  
+
   // Only process commands beginning with the set prefix
   if (message.content.indexOf(prefix) !== 0) return;
-  
+
   // Split input into commands and arguments
   const args = message.substring(prefix.length).trim().split(" ");
   const command = args.shift().toLowerCase();
-  
+
   if (comamnd === "ping") {
     message.channel.send("pong!");
   }
-  
+
   if (command === "roll") {
     if (args.length < 1) {
       message.channel.send("'Roll' requires one argument");
