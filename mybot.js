@@ -10,14 +10,24 @@ client.on("ready", () => {
 client.on("message", (message) => {
 
   // Ignore other bots
-  if (message.author.bot) return;
+  if (message.author.bot) {
+    // Debug
+    message.channel.send("Ignoring message from bot");
+  }
 
   // Only process commands beginning with the set prefix
-  if (message.content.indexOf(prefix) !== 0) return;
+  if (message.content.indexOf(prefix) !== 0) {
+    // Debug
+    message.channel.send("Ignoring message that does not begin with prefix");
+  }
 
   // Split input into commands and arguments
   const args = message.substring(prefix.length).trim().split(" ");
   const command = args.shift().toLowerCase();
+  
+  message.channel.send("Command: " + command");
+  message.channel.send("Args: " + args.join(", "));
+  
 
   if (comamnd === "ping") {
     message.channel.send("pong!");
