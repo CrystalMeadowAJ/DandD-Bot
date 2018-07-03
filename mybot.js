@@ -9,13 +9,13 @@ client.on("ready", () => {
 
 client.on("message", (message) => {
   
-  # Ignore other bots
+  // Ignore other bots
   if (message.author.bot) return;
   
-  # Only process commands beginning with the set prefix
+  // Only process commands beginning with the set prefix
   if (message.content.indexOf(prefix) !== 0) return;
   
-  # Split input into commands and arguments
+  // Split input into commands and arguments
   const args = message.substring(prefix.length).trim().split(" ");
   const command = args.shift().toLowerCase();
   
@@ -34,7 +34,7 @@ client.on("message", (message) => {
       message.channel.send("Incorrect command format");
       return;
     }
-    # Should probably put limits on these
+    // Should probably put limits on these
     var x = match[0];
     var y = match[1];
     var results = [];
