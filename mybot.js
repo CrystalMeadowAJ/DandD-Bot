@@ -41,7 +41,7 @@ client.on("message", (message) => {
     }
     var argRegex = /(\d*)d(\d*)/i;
     var match = argRegex.exec(args[0]);
-    if (match.length !== 2) {
+    if (match == null || match.length !== 2) {
       message.channel.send("Incorrect command format");
       return;
     }
