@@ -22,7 +22,7 @@ client.on("message", (message) => {
   }
 
   // Split input into commands and arguments
-  const args = message.substring(prefix.length).trim().split(" ");
+  const args = message.content.substring(prefix.length).trim().split(" ");
   const command = args.shift().toLowerCase();
   
   message.channel.send("Command: " + command);
