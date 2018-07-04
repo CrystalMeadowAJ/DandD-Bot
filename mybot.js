@@ -44,13 +44,13 @@ client.on("message", (message) => {
     if (match == null) {
       message.channel.send("No applicable argument found");
     }
-    if (match.length !== 2) {
+    if (match.length !== 3) {
       message.channel.send("Incorrect command format; values found: " + match.join(", "));
       return;
     }
     // Should probably put limits on these
-    var x = match[0];
-    var y = match[1];
+    var x = match[1];
+    var y = match[2];
     var results = [];
     for(var i = 0; i < x; i++) {
       results.push(Math.floor(Math.random() * y) + 1);
