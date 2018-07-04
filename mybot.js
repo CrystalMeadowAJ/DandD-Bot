@@ -17,7 +17,7 @@ client.on("message", (message) => {
   // Only process commands beginning with the set prefix
   if (message.content.indexOf(prefix) !== 0) {
     // Debug
-    message.channel.send("Ignoring message that does not begin with prefix");
+    // message.channel.send("Ignoring message that does not begin with prefix");
     return;
   }
 
